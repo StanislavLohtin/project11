@@ -1,4 +1,4 @@
-#Sample Blog App
+# Sample Blog App
 
 In order to run the application:
 1. Install Node.js
