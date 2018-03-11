@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sample App</title>
+</head>
+<body ng-app="sampleBlogApp" ng-controller="sampleBlogAppCtrl">
+<h1> Sample Blog</h1>
+<div id="mainContent" ng-if="users">
+    <div id="userList">
+        <div ng-repeat="user in users" ng-click="onUserClick(user)" ng-class="{'alert-info': currentUser === user}">
+            <h4> {{ user.showUserName() }}</h4>
+        </div>
+    </div>
+    <div id="postList">
+        <div ng-repeat="post in currentUser.posts" ng-click="onPostClick(post)" ng-class="{'alert-info': currentPost === post}">
+            <p><i> {{ post.id }}</i> {{ post.title }}</p>
+            <span class="like-button"  ng-click="post.liked = !post.liked;"> {{ post.liked ? 'Unlike' : 'Like' }}</span>
+        </div>
+    </div>
+    <div id="postBody">
+        <h3> {{ currentPost.title }} <small>by User {{ currentPost.userId }}</small></h3>
+        <hr/>
+        <div> {{ currentPost.body }} </div>
+    </div>
+</div>
+<div ng-if="!users"> There are no posts in this blog. </div>
+<script type="text/javascript" src="bundle.js"></script>
+</body>
+</html>

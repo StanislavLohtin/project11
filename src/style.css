@@ -1,0 +1,35 @@
+#mainContent {
+    display: flex;
+}
+
+#userList div,
+#postList div {
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#userList {
+    flex: 1;
+}
+
+#postList {
+    flex: 2;
+}
+
+#postBody {
+    flex: 3;
+    padding: 10px;
+}
+
+h1 {
+    padding: 40px;
+}
+
+.like-button {
+    font-weight: bold;
+}
+
+.like-button:hover {
+    color: blue;
+}
